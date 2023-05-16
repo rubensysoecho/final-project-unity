@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public int totalCoins = 0;
     public int lives = 3;
-    public float health = 3;
+    public float health;
+    public float maxHealth;
     public Transform spawnPoint;
     public PlayerController player;
     public float timeToRespawn = 2f;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Spawn();
+        health = maxHealth;
     }
 
     void Update()
@@ -36,6 +38,7 @@ public class GameManager : MonoBehaviour
                     Vector3 position = new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, player.transform.position.z);
                     player.transform.position = position;
                     player.isAlive = true;
+                    health = maxHealth;
                     timer = 0;
                 }
                 else
