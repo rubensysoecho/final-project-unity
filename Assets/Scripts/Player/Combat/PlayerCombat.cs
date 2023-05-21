@@ -8,6 +8,7 @@ public class PlayerCombat : MonoBehaviour
     public PlayerController controller;
     public PlayerMovement movement;
     public Animator anim;
+    public GameManager manager;
 
     public Transform attackPoint;
     public float attackRange = 0.5f;
@@ -45,6 +46,7 @@ public class PlayerCombat : MonoBehaviour
             if (enemy.GetComponent<EnemyController>().health - damage <= 0)
             {
                 enemy.gameObject.GetComponent<EnemyController>().executionParticle.Play();
+                manager.totalPoints = manager.totalPoints + enemy.gameObject.GetComponent<EnemyController>().reward;
                 Destroy(enemy.gameObject, 0.5f);
                 Debug.Log("Enemigo derrotado");
             }
@@ -71,7 +73,8 @@ public class PlayerCombat : MonoBehaviour
             if (enemy.GetComponent<EnemyController>().health - damage <= 0)
             {
                 enemy.gameObject.GetComponent<EnemyController>().executionParticle.Play();
-                Destroy(enemy.gameObject, 0);
+                manager.totalPoints = manager.totalPoints + enemy.gameObject.GetComponent<EnemyController>().reward;
+                Destroy(enemy.gameObject, 0.5f);
                 Debug.Log("Enemigo derrotado");
             }
             else
@@ -95,7 +98,8 @@ public class PlayerCombat : MonoBehaviour
             if (enemy.GetComponent<EnemyController>().health - damage <= 0)
             {
                 enemy.gameObject.GetComponent<EnemyController>().executionParticle.Play();
-                Destroy(enemy.gameObject, 0);
+                manager.totalPoints = manager.totalPoints + enemy.gameObject.GetComponent<EnemyController>().reward;
+                Destroy(enemy.gameObject, 0.5f);
                 Debug.Log("Enemigo derrotado");
             }
             else

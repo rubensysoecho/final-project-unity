@@ -83,7 +83,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 15
   m_Sprite: {fileID: 1778290516, guid: 7bfcc42cfc6ca4d468d7540302f6a63b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -229,6 +229,7 @@ MonoBehaviour:
   controller: {fileID: 3557424709521232741}
   movement: {fileID: 3557424709292326069}
   anim: {fileID: 3557424709292326058}
+  manager: {fileID: 0}
   attackPoint: {fileID: 3557424708098870162}
   attackRange: 0.1
   enemyLayers:

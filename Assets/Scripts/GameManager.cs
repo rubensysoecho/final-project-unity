@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int totalCoins = 0;
+    public float totalPoints = 0;
     public int lives = 3;
     public float health;
     public float maxHealth;
@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     public bool canWallJump;
     public bool canDash;
+
+    public UI_GameOver gameOver;
 
     void Start()
     {
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("GAME OVER!!");
+                    GameOver();
                 }
             }
             
@@ -58,5 +60,11 @@ public class GameManager : MonoBehaviour
     public void Spawn()
     {
         player.transform.position = spawnPoint.transform.position;
+    }
+
+    public void GameOver()
+    {
+        player.isAlive = false;
+        gameOver.Setup(totalPoints);
     }
 }

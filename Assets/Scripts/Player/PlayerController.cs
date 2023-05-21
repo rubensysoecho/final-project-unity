@@ -117,10 +117,18 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == ("Cherry"))
+        if (collision.gameObject.tag == ("PointProp"))
         {
-            manager.totalCoins++;
-            Debug.Log("Cherry picked");
+            manager.totalPoints++;
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.tag == ("HealthProp"))
+        {
+            if (manager.health < manager.maxHealth)
+            {
+                manager.health++;
+            }
             Destroy(collision.gameObject);
         }
 
@@ -145,6 +153,21 @@ public class PlayerController : MonoBehaviour
                 anim.SetTrigger("Hit");
                 Die();
                 break;
+            case "WeakPoint":
+                Debug.Log("HIT");
+                Destroy(collision.transform.parent.gameObject);
+                break;
+            case "EndZone":
+                if (manager.health - 1 <= 0)
+                {
+                    manager.GameOver();
+                }
+                else
+                {
+                    manager.Spawn();
+                    manager.health--;
+                }
+                break;
             case "Enemy":
                 EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
                 if (manager.health - enemy.damage <= 0)
@@ -155,15 +178,6 @@ public class PlayerController : MonoBehaviour
                 {
                     TakeDamage(enemy.damage);
                 }
-                
-                break;
-            case "WeakPoint":
-                Debug.Log("HIT");
-                Destroy(collision.transform.parent.gameObject);
-                break;
-            case "EndZone":
-                manager.Spawn();
-                manager.health--;
                 break;
         }
     }
@@ -193,6 +207,7 @@ public class PlayerController : MonoBehaviour
     
     public void Die()
     {
+        manager.health = 0;
         rb.bodyType = RigidbodyType2D.Static;
         this.isAlive = false;
         Debug.Log("Has sido derrotado");

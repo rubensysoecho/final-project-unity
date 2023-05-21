@@ -7,13 +7,15 @@ public class FillStatus : MonoBehaviour
 {
     public GameManager gameManager;
     public Image fillImage;
-    public Text fillText;
-    private Slider slider;
+    public Text hpText;
+    public Text pointsText;
+    public Text livesText;
+    public Slider slider;
 
     // Start is called before the first frame update
     void Start()
     {
-        slider = GetComponent<Slider>();
+        
     }
 
     // Update is called once per frame
@@ -21,6 +23,9 @@ public class FillStatus : MonoBehaviour
     {
         float fillValue = gameManager.health / gameManager.maxHealth;
         slider.value = fillValue;
-        fillText.text = $"{gameManager.health}HP / {gameManager.maxHealth}HP"; 
+
+        hpText.text = $"{gameManager.health}HP / {gameManager.maxHealth}HP";
+        pointsText.text = $"{gameManager.totalPoints}";
+        livesText.text = $"{gameManager.lives}";
     }
 }

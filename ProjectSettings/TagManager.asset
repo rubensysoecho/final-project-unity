@@ -4,13 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Cherry
   - Spikes
   - Enemy
   - WeakPoint
   - CheckPoint
   - LevelEnd
   - EndZone
+  - PointProp
+  - Cherry
+  - HealthProp
   layers:
   - Default
   - TransparentFX
