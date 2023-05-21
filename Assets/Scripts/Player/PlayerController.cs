@@ -117,32 +117,38 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == ("PointProp"))
+        switch (collision.gameObject.tag)
         {
-            manager.totalPoints++;
-            Destroy(collision.gameObject);
+            case "PointProp":
+                manager.totalPoints++;
+                Destroy(collision.gameObject);
+                break;
+            case "HealthProp":
+                if (manager.health < manager.maxHealth)
+                {
+                    manager.health++;
+                }
+                Destroy(collision.gameObject);
+                break;
+            case "CheckPoint":
+                manager.spawnPoint = collision.gameObject.transform;
+                Debug.Log("checkpoint");
+                break;
+            case "LevelEnd":
+                manager.FinishLevel();
+                break;
+            case "EndZone":
+                if (manager.lives - 1 <= 0)
+                {
+                    manager.GameOver();
+                }
+                else
+                {
+                    manager.Spawn();
+                    manager.lives--;
+                }
+                break;
         }
-
-        if (collision.gameObject.tag == ("HealthProp"))
-        {
-            if (manager.health < manager.maxHealth)
-            {
-                manager.health++;
-            }
-            Destroy(collision.gameObject);
-        }
-
-        if (collision.gameObject.tag == ("CheckPoint"))
-        {
-            manager.spawnPoint = collision.gameObject.transform;
-            Debug.Log("checkpoint");
-        }
-
-        if (collision.gameObject.tag == ("LevelEnd"))
-        {
-            manager.FinishLevel();
-        }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -156,17 +162,6 @@ public class PlayerController : MonoBehaviour
             case "WeakPoint":
                 Debug.Log("HIT");
                 Destroy(collision.transform.parent.gameObject);
-                break;
-            case "EndZone":
-                if (manager.health - 1 <= 0)
-                {
-                    manager.GameOver();
-                }
-                else
-                {
-                    manager.Spawn();
-                    manager.health--;
-                }
                 break;
             case "Enemy":
                 EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();

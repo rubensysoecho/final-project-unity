@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
     public bool canDash;
 
     public UI_GameOver gameOver;
+    public UI_LevelFinished levelFinished;
 
     void Start()
     {
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
                     health = maxHealth;
                     timer = 0;
                 }
-                else
+                else if (lives <= 0)
                 {
                     GameOver();
                 }
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void FinishLevel()
     {
+        levelFinished.Setup(totalPoints);
         Debug.Log("LEVEL FINISHED!!");
     }
 
