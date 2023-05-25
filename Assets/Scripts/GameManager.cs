@@ -53,15 +53,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void Spawn()
+    {
+        player.transform.position = spawnPoint.transform.position;
+    }
+
     public void FinishLevel()
     {
         levelFinished.Setup(totalPoints);
         Debug.Log("LEVEL FINISHED!!");
-    }
-
-    public void Spawn()
-    {
-        player.transform.position = spawnPoint.transform.position;
     }
 
     public void GameOver()
