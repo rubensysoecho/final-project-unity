@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public float health;
+    public int health;
     public float speed;
     public float distance;
-    public float damage;
+    public int damage;
     public int reward;
     private float positionLeft;
     private float positionRight;

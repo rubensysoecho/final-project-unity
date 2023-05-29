@@ -12,7 +12,7 @@ public class PlayerCombat : MonoBehaviour
 
     public Transform attackPoint;
     public float attackRange = 0.5f;
-    private float damage;
+    private int damage;
 
     public LayerMask enemyLayers;
 

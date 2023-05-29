@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -120,7 +121,7 @@ public class PlayerController : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "PointProp":
-                manager.totalPoints++;
+                manager.totalPoints += 10;
                 Destroy(collision.gameObject);
                 break;
             case "HealthProp":
@@ -136,6 +137,21 @@ public class PlayerController : MonoBehaviour
                 break;
             case "LevelEnd":
                 manager.FinishLevel();
+                switch (SceneManager.GetActiveScene().name)
+                {
+                    case "Level01":
+                        LevelsCompleted.CompletarNivel(1);
+                        break;
+                    case "Level02":
+                        LevelsCompleted.CompletarNivel(2);
+                        break;
+                    case "Level03":
+                        LevelsCompleted.CompletarNivel(3);
+                        break;
+                    case "Level04":
+                        LevelsCompleted.CompletarNivel(4);
+                        break;
+                }
                 break;
             case "EndZone":
                 if (manager.lives - 1 <= 0)
@@ -209,7 +225,7 @@ public class PlayerController : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
         manager.health -= damage;
         Debug.Log("Te han tocado con " + damage);

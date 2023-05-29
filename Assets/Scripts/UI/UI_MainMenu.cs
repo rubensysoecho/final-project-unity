@@ -7,7 +7,7 @@ public class UI_MainMenu : MonoBehaviour
 {
     public void Iniciar()
     {
-        SceneManager.LoadScene("LevelSelector");
+        SceneManager.LoadScene("LevelSelection");
     }
 
     public void IniciarEstadisticas()

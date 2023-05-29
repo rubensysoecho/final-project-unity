@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public int totalPoints = 0;
     public int lives = 3;
-    public float health;
-    public float maxHealth;
+    public int health;
+    public int maxHealth;
     public Transform spawnPoint;
     public PlayerController player;
     public float timeToRespawn = 2f;

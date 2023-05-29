@@ -415,7 +415,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1752307101366031161, guid: c13d4dbf05a59fe45a697ed0d600b22a, type: 3}
       propertyPath: m_Name
-      value: Image (1)
+      value: Estadisticas
       objectReference: {fileID: 0}
     - target: {fileID: 2355763849462965078, guid: c13d4dbf05a59fe45a697ed0d600b22a, type: 3}
       propertyPath: m_Text
@@ -1697,7 +1697,7 @@ GameObject:
   - component: {fileID: 827342492}
   - component: {fileID: 827342491}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Titulo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1860,7 +1860,7 @@ GameObject:
   - component: {fileID: 1397841431}
   - component: {fileID: 1397841432}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2051,7 +2051,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1433936637}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1433936641}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1433936641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1433936636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcd860fd7168a349975fa5a77cbfc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1457059623
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,7 +2374,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1752307101366031161, guid: c13d4dbf05a59fe45a697ed0d600b22a, type: 3}
       propertyPath: m_Name
-      value: Image
+      value: Iniciar
       objectReference: {fileID: 0}
     - target: {fileID: 2355763849462965078, guid: c13d4dbf05a59fe45a697ed0d600b22a, type: 3}
       propertyPath: m_Text
@@ -2513,4 +2537,28 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1567611004406428173}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1567611004406428177}
+        m_TargetAssemblyTypeName: UI_MainMenu, Assembly-CSharp
+        m_MethodName: Iniciar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1567611004406428177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393190932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abcd860fd7168a349975fa5a77cbfc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
