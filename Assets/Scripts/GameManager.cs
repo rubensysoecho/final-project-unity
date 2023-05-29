@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float totalPoints = 0;
+    public int totalPoints = 0;
     public int lives = 3;
     public float health;
     public float maxHealth;
@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public UI_GameOver gameOver;
     public UI_LevelFinished levelFinished;
+
+    public PlayfabManager bbddManager;
 
     void Start()
     {
@@ -68,5 +70,6 @@ public class GameManager : MonoBehaviour
     {
         player.isAlive = false;
         gameOver.Setup(totalPoints);
+        bbddManager.SendLeaderboard(totalPoints);
     }
 }

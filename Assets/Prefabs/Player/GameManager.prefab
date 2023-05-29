@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6024467228353791310
+--- !u!1 &3543214304770115026
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6024467228353791280}
-  - component: {fileID: 6024467228353791311}
+  - component: {fileID: 3543214305192885365}
+  - component: {fileID: 3543214305192885364}
+  - component: {fileID: 3543214305192885366}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -17,13 +18,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6024467228353791280
+--- !u!4 &3543214305192885365
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6024467228353791310}
+  m_GameObject: {fileID: 3543214304770115026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.78145474, y: 0.7389208, z: -1.152282}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,21 +33,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6024467228353791311
+--- !u!114 &3543214305192885364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6024467228353791310}
+  m_GameObject: {fileID: 3543214304770115026}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 219d258b763a81c46903b0567478eb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalCoins: 0
-  health: 3
+  totalPoints: 0
   lives: 3
+  health: 3
+  maxHealth: 3
   spawnPoint: {fileID: 0}
   player: {fileID: 0}
-  timeToRespawn: 2
+  timeToRespawn: 1
+  canWallJump: 0
+  canDash: 0
+  gameOver: {fileID: 0}
+  levelFinished: {fileID: 0}
+  bbddManager: {fileID: 3543214305192885366}
+--- !u!114 &3543214305192885366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3543214304770115026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 796d2ec3bc1387d4dba6fe066ed1adcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

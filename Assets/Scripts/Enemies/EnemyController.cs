@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     public float speed;
     public float distance;
     public float damage;
-    public float reward;
+    public int reward;
     private float positionLeft;
     private float positionRight;
     public bool isMovingRight;
