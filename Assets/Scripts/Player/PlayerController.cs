@@ -121,7 +121,7 @@ public class PlayerController : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "PointProp":
-                manager.totalPoints += 10;
+                manager.levelPoints += 10;
                 Destroy(collision.gameObject);
                 break;
             case "HealthProp":

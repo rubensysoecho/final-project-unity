@@ -25,7 +25,7 @@ public class FillStatus : MonoBehaviour
         slider.value = fillValue;
 
         hpText.text = $"{gameManager.health}HP / {gameManager.maxHealth}HP";
-        pointsText.text = $"{gameManager.totalPoints}";
+        pointsText.text = $"{gameManager.levelPoints}";
         livesText.text = $"{gameManager.lives}";
     }
 }

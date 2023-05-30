@@ -18,4 +18,9 @@ public class UI_LevelFinished : MonoBehaviour
     {
         SceneManager.LoadScene("Level02");
     }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("LevelSelection");
+    }
 }
