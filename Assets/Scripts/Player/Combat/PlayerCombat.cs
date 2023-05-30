@@ -43,18 +43,18 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemy.GetComponent<EnemyController>().health - damage <= 0)
+            if (enemy.GetComponent<MainEnemyController>().health - damage <= 0)
             {
-                enemy.gameObject.GetComponent<EnemyController>().executionParticle.Play();
-                manager.totalPoints = manager.totalPoints + enemy.gameObject.GetComponent<EnemyController>().reward;
+                enemy.gameObject.GetComponent<MainEnemyController>().executionParticle.Play();
+                manager.totalPoints = manager.totalPoints + enemy.gameObject.GetComponent<MainEnemyController>().reward;
                 Destroy(enemy.gameObject, 0.5f);
                 Debug.Log("Enemigo derrotado");
             }
             else
             {
                 attackParticle.Play();
-                enemy.GetComponent<EnemyController>().health -= damage;
-                Debug.Log(enemy.GetComponent<EnemyController>().health + " HP");
+                enemy.GetComponent<MainEnemyController>().health -= damage;
+                Debug.Log(enemy.GetComponent<MainEnemyController>().health + " HP");
             }
 
             
@@ -70,18 +70,18 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemy.GetComponent<EnemyController>().health - damage <= 0)
+            if (enemy.GetComponent<MainEnemyController>().health - damage <= 0)
             {
-                enemy.gameObject.GetComponent<EnemyController>().executionParticle.Play();
-                manager.totalPoints = manager.totalPoints + enemy.gameObject.GetComponent<EnemyController>().reward;
+                enemy.gameObject.GetComponent<MainEnemyController>().executionParticle.Play();
+                manager.totalPoints = manager.totalPoints + enemy.gameObject.GetComponent<MainEnemyController>().reward;
                 Destroy(enemy.gameObject, 0.5f);
                 Debug.Log("Enemigo derrotado");
             }
             else
             {
                 attackParticle.Play();
-                enemy.GetComponent<EnemyController>().health -= damage;
-                Debug.Log(enemy.GetComponent<EnemyController>().health);
+                enemy.GetComponent<MainEnemyController>().health -= damage;
+                Debug.Log(enemy.GetComponent<MainEnemyController>().health);
             }
         }
     }
@@ -95,18 +95,18 @@ public class PlayerCombat : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemy.GetComponent<EnemyController>().health - damage <= 0)
+            if (enemy.GetComponent<MainEnemyController>().health - damage <= 0)
             {
-                enemy.gameObject.GetComponent<EnemyController>().executionParticle.Play();
-                manager.totalPoints = manager.totalPoints + enemy.gameObject.GetComponent<EnemyController>().reward;
+                enemy.gameObject.GetComponent<MainEnemyController>().executionParticle.Play();
+                manager.totalPoints = manager.totalPoints + enemy.gameObject.GetComponent<MainEnemyController>().reward;
                 Destroy(enemy.gameObject, 0.5f);
                 Debug.Log("Enemigo derrotado");
             }
             else
             {
                 attackParticle.Play();
-                enemy.GetComponent<EnemyController>().health -= damage;
-                Debug.Log(enemy.GetComponent<EnemyController>().health);
+                enemy.GetComponent<MainEnemyController>().health -= damage;
+                Debug.Log(enemy.GetComponent<MainEnemyController>().health);
             }
         }
     }

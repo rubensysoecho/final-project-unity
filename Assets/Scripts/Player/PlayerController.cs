@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
             case "HealthProp":
                 if (manager.health < manager.maxHealth)
                 {
-                    manager.health++;
+                    manager.health += 20;
                 }
                 Destroy(collision.gameObject);
                 break;
@@ -179,8 +179,8 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("HIT");
                 Destroy(collision.transform.parent.gameObject);
                 break;
-            case "Enemy":
-                EnemyController enemy = collision.gameObject.GetComponent<EnemyController>();
+            case "Walker":
+                MainEnemyController enemy = collision.gameObject.GetComponent<MainEnemyController>();
                 if (manager.health - enemy.damage <= 0)
                 {
                     Die();
@@ -188,6 +188,18 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     TakeDamage(enemy.damage);
+                }
+                break;
+            case "Eagle":
+                Debug.Log("IMPACTO " + collision.gameObject.tag);
+                EagleController enemyEagle = collision.gameObject.GetComponent<EagleController>();
+                if (manager.health - enemyEagle.damage <= 0)
+                {
+                    Die();
+                }
+                else
+                {
+                    TakeDamage(enemyEagle.damage);
                 }
                 break;
         }

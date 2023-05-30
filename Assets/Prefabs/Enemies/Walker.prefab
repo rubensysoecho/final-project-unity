@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 4085739915082222419}
   - component: {fileID: 4085739915082222412}
   - component: {fileID: 4085739915082222413}
-  - component: {fileID: 4085739915082222414}
   - component: {fileID: 4085739915082222415}
   - component: {fileID: 4085739915082222408}
+  - component: {fileID: -8453726868205686921}
   m_Layer: 7
   m_Name: Walker
-  m_TagString: Enemy
+  m_TagString: Walker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,26 +115,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27846533, y: 0.18757348}
   m_EdgeRadius: 0
---- !u!114 &4085739915082222414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4085739915082222409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86aaeece4bf3d924e9c64abd34d5ae62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 50
-  speed: 0.5
-  distance: 2
-  damage: 0.5
-  reward: 1
-  isMovingRight: 0
-  spriteR: {fileID: 4085739915082222412}
-  executionParticle: {fileID: 6286630419806140562}
 --- !u!95 &4085739915082222415
 Animator:
   serializedVersion: 5
@@ -177,6 +157,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-8453726868205686921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4085739915082222409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86aaeece4bf3d924e9c64abd34d5ae62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 50
+  damage: 10
+  reward: 10
+  executionParticle: {fileID: 6286630419806140562}
+  speed: 1
+  distance: 1
+  isMovingRight: 0
+  spriteR: {fileID: 4085739915082222412}
 --- !u!1001 &4085739916046223781
 PrefabInstance:
   m_ObjectHideFlags: 0
