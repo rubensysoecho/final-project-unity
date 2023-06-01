@@ -3,16 +3,18 @@ using PlayFab.ClientModels;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayfabManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject rowPrefab;
+    public Transform rowsParent;
+
     void Start()
     {
         Login();
     }
 
-    // Update is called once per frame
     void Login()
     {
         var request = new LoginWithCustomIDRequest
@@ -20,10 +22,10 @@ public class PlayfabManager : MonoBehaviour
             CustomId = SystemInfo.deviceUniqueIdentifier,
             CreateAccount = true,
         };
-        PlayFabClientAPI.LoginWithCustomID(request, OnSuccess, OnError);
+        PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnError);
     }
 
-    void OnSuccess(LoginResult result)
+    void OnLoginSuccess(LoginResult result)
     {
         Debug.Log("Successful login/account create!");
     }
@@ -68,8 +70,20 @@ public class PlayfabManager : MonoBehaviour
 
     void OnLeaderboardGet(GetLeaderboardResult result)
     {
+
+        foreach(Transform item in rowsParent)
+        {
+            Destroy(item.gameObject);
+        }
+
         foreach (var item in result.Leaderboard)
         {
+            GameObject newGo = Instantiate(rowPrefab, rowsParent);
+            Text[] texts = newGo.GetComponentsInChildren<Text>();
+            texts[0].text = (item.Position + 1).ToString();
+            texts[1].text = item.PlayFabId;
+            texts[2].text = item.StatValue.ToString();
+
             Debug.Log(item.Position + " " + item.PlayFabId + " " + item.StatValue);
         }
     }

@@ -12,7 +12,7 @@ public class UI_MainMenu : MonoBehaviour
 
     public void IniciarEstadisticas()
     {
-
+        SceneManager.LoadScene("Leaderboard");
     }
 
     public void Salir()
