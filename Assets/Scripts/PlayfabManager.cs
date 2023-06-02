@@ -86,5 +86,7 @@ public class PlayfabManager : MonoBehaviour
 
             Debug.Log(item.Position + " " + item.PlayFabId + " " + item.StatValue);
         }
+
     }
+
 }

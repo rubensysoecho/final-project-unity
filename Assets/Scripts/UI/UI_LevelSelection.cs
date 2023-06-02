@@ -11,48 +11,19 @@ public class UI_LevelSelection : MonoBehaviour
         Color objectColor = gameObject.GetComponent<Image>().color;
         switch (gameObject.name)
         {
-            case "Level1":
-                if (LevelsCompleted.IsNivelCompletado(1))
-                {
-                    objectColor = Color.HSVToRGB(149, 77, 84);
-                }
-                else
-                {
-                    objectColor = Color.HSVToRGB(8, 82, 84);
-                }
-                break;
             case "Level2":
-                if (LevelsCompleted.IsNivelCompletado(2))
+                if (PlayerPrefs.GetInt("lvl_completados") == 1)
                 {
                     objectColor = Color.HSVToRGB(149, 77, 84);
-                }
-                else
-                {
-                    objectColor = Color.HSVToRGB(8, 82, 84);
                 }
                 break;
             case "Level3":
-                if (LevelsCompleted.IsNivelCompletado(3))
+                if (PlayerPrefs.GetInt("lvl_completados") == 2)
                 {
                     objectColor = Color.HSVToRGB(149, 77, 84);
-                }
-                else
-                {
-                    objectColor = Color.HSVToRGB(8, 82, 84);
-                }
-                break;
-            case "Level4":
-                if (LevelsCompleted.IsNivelCompletado(4))
-                {
-                    objectColor = Color.HSVToRGB(149, 77, 84);
-                }
-                else
-                {
-                    objectColor = Color.HSVToRGB(8, 82, 84);
                 }
                 break;
         }
-        
     }
     public void StartLevel1()
     {

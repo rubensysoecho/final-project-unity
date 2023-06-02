@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static int totalPoints = 0;
-
     public int levelPoints = 0;
     public int lives = 3;
     public int health;
@@ -65,10 +63,17 @@ public class GameManager : MonoBehaviour
     public void FinishLevel()
     {
         levelFinished.Setup(levelPoints);
-        totalPoints += levelPoints;
-        PlayerPrefs.SetInt("totalPoints", totalPoints);
+        AddPoints(levelPoints);
+        int totalPoints = PlayerPrefs.GetInt("totalPoints");
         bbddManager.SendLeaderboard(totalPoints);
         Debug.Log("LEVEL FINISHED!!");
+    }
+
+    private void AddPoints(int pointsToAdd)
+    {
+        int totalPoints = PlayerPrefs.GetInt("totalPoints");
+        totalPoints += pointsToAdd;
+        PlayerPrefs.SetInt("totalPoints", totalPoints);
     }
 
     public void GameOver()
@@ -77,8 +82,4 @@ public class GameManager : MonoBehaviour
         gameOver.Setup(levelPoints);
     }
 
-    public int GetTotalPoints()
-    {
-        return totalPoints;
-    }
 }

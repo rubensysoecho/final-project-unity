@@ -140,16 +140,10 @@ public class PlayerController : MonoBehaviour
                 switch (SceneManager.GetActiveScene().name)
                 {
                     case "Level01":
-                        LevelsCompleted.CompletarNivel(1);
+                        PlayerPrefs.SetInt("lvl_completados", 1);
                         break;
                     case "Level02":
-                        LevelsCompleted.CompletarNivel(2);
-                        break;
-                    case "Level03":
-                        LevelsCompleted.CompletarNivel(3);
-                        break;
-                    case "Level04":
-                        LevelsCompleted.CompletarNivel(4);
+                        PlayerPrefs.SetInt("lvl_completados", 2);
                         break;
                 }
                 break;
