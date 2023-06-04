@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
         rb = movement.rb;
     }
 
+    [Obsolete]
     void Update()
     {
         airIndex = rb.velocity.y;
@@ -58,6 +59,18 @@ public class PlayerController : MonoBehaviour
         // Salto del personaje
         Jump();
         
+        /*if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (pauseMenu.active)
+            {
+                pauseMenu.SetActive(false);
+            }
+            else
+            {
+                pauseMenu.SetActive(false);
+            }
+        }*/
+
         if (movement.m_Grounded)
         {
             //actualJumps = maxJumps;
