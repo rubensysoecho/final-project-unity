@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
 
     public void FinishLevel()
     {
+        Time.timeScale = 0;
         levelFinished.Setup(levelPoints);
         AddPoints(levelPoints);
         int totalPoints = PlayerPrefs.GetInt("totalPoints");
@@ -78,6 +79,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        Time.timeScale = 0;
         player.isAlive = false;
         gameOver.Setup(levelPoints);
     }

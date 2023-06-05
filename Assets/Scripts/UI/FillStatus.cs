@@ -13,19 +13,15 @@ public class FillStatus : MonoBehaviour
     public Text livesText;
     public Slider slider;
 
-    // Start is called before the first frame update
     void Start()
     {
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         float fillValue = (float)gameManager.health / (float)gameManager.maxHealth;
         slider.value = fillValue;
-
-        Debug.Log(gameManager.health + "/" + gameManager.maxHealth + "=" + fillValue);
 
         hpText.text = $"{gameManager.health}HP / {gameManager.maxHealth}HP";
         pointsText.text = $"{gameManager.levelPoints}";
