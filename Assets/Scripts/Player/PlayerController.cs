@@ -36,7 +36,6 @@ public class PlayerController : MonoBehaviour
         rb = movement.rb;
     }
 
-    [Obsolete]
     void Update()
     {
         airIndex = rb.velocity.y;
@@ -58,18 +57,6 @@ public class PlayerController : MonoBehaviour
 
         // Salto del personaje
         Jump();
-        
-        /*if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (pauseMenu.active)
-            {
-                pauseMenu.SetActive(false);
-            }
-            else
-            {
-                pauseMenu.SetActive(false);
-            }
-        }*/
 
         if (movement.m_Grounded)
         {
@@ -131,6 +118,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log(collision.gameObject.tag);
         switch (collision.gameObject.tag)
         {
             case "PointProp":
@@ -170,6 +158,12 @@ public class PlayerController : MonoBehaviour
                     manager.Spawn();
                     manager.lives--;
                 }
+                break;
+            case "Capybara":
+                Debug.Log("FURRULA");
+                manager.levelPoints += 500;
+                manager.Spawn();
+                Destroy(collision.gameObject, 0);
                 break;
         }
     }

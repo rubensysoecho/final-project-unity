@@ -16,14 +16,16 @@ public class FillStatus : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.value = 100;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        float fillValue = gameManager.health / gameManager.maxHealth;
+        float fillValue = (float)gameManager.health / (float)gameManager.maxHealth;
         slider.value = fillValue;
+
+        Debug.Log(gameManager.health + "/" + gameManager.maxHealth + "=" + fillValue);
 
         hpText.text = $"{gameManager.health}HP / {gameManager.maxHealth}HP";
         pointsText.text = $"{gameManager.levelPoints}";

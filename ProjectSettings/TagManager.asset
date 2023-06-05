@@ -15,6 +15,7 @@ TagManager:
   - HealthProp
   - Eagle
   - Walker
+  - Cabybara
   layers:
   - Default
   - TransparentFX
