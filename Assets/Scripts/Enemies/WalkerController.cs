@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class WalkerController : MainEnemyController
 {
+    [Header("Variables del enemigo - Walker")]
     public float speed;
     public float distance;
+
+    [Header("Otros")]
+    public bool isMovingRight;
+
+    [Header("Referencias")]
+    public SpriteRenderer spriteR;
+    
     private float positionLeft;
     private float positionRight;
-    public bool isMovingRight;
-    public SpriteRenderer spriteR;
 
     void Start()
     {

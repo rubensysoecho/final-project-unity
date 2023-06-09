@@ -6,26 +6,28 @@ using UnityEngine.Experimental.GlobalIllumination;
 
 public class PlayerMovement : MonoBehaviour {
 
-    public float horizontalInput = 0f;
-    [SerializeField] private PlayerController playerController;
-
-    [SerializeField] private float m_JumpForce = 0f;                         
-    [Range(0, .3f)] [SerializeField] private float m_MovementSmoothing = .05f;  
-    [SerializeField] private bool m_AirControl = false;                        
-    [SerializeField] private LayerMask m_WhatIsGround;
-    [SerializeField] private Transform m_GroundCheck;                           
-
-    const float k_GroundedRadius = .0f;
-    public bool m_Grounded;
-    const float k_CeilingRadius = .2f;
-    public Rigidbody2D rb;
-    public bool m_FacingRight = true;
-    private Vector3 m_Velocity = Vector3.zero;
-
+    [Header("Deslizamiento en pared")]
     public bool isWallSliding;
     public float wallSlidingSpeed = 2f;
-    public Transform wallCheck;
+
+    [Header("Otros")]
     public LayerMask wallLayer;
+    [SerializeField] private LayerMask m_WhatIsGround;
+    [SerializeField] private float m_JumpForce = 0f;
+    [SerializeField] private bool m_AirControl = false;
+    [Range(0, .3f)][SerializeField] private float m_MovementSmoothing = .05f;
+    public bool m_FacingRight = true;
+    public bool m_Grounded;
+    public float horizontalInput = 0f;
+    const float k_GroundedRadius = .0f;
+    const float k_CeilingRadius = .2f;
+    private Vector3 m_Velocity = Vector3.zero;
+
+    [Header("Referencias")]
+    [SerializeField] private PlayerController playerController;
+    [SerializeField] private Transform m_GroundCheck;
+    public Rigidbody2D rb;
+    public Transform wallCheck;
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();

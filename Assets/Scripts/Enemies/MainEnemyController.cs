@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class MainEnemyController : MonoBehaviour
 {
+    [Header("Variables del enemigo")]
     public int health;
     public int damage;
     public int reward;
+
+    [Header("Referencias")]
     public ParticleSystem executionParticle;
 
     void Start()

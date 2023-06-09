@@ -7,9 +7,15 @@ using UnityEngine.UI;
 
 public class PlayfabManager : MonoBehaviour
 {
+    [Header("Referencias Leaderboard")]
     public GameObject rowPrefab;
     public Transform rowsParent;
 
+    [Header("Referencias Interfaz")]
+    public GameObject loggingWindow;
+    public GameObject loginWindow;
+    public GameObject menuWindow;
+    public Text nameInput;
     void Start()
     {
         Login();
@@ -21,6 +27,10 @@ public class PlayfabManager : MonoBehaviour
         {
             CustomId = SystemInfo.deviceUniqueIdentifier,
             CreateAccount = true,
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
+            {
+                GetPlayerProfile = true
+            }
         };
         PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnError);
     }
@@ -28,8 +38,39 @@ public class PlayfabManager : MonoBehaviour
     void OnLoginSuccess(LoginResult result)
     {
         Debug.Log("Successful login/account create!");
+        string name = null;
+        if (result.InfoResultPayload.PlayerProfile != null)
+            name = result.InfoResultPayload.PlayerProfile.DisplayName;
+
+        if (name == null)
+        {
+            loggingWindow.SetActive(false);
+            loginWindow.SetActive(true);
+        }
+        else
+        {
+            loggingWindow.SetActive(false);
+            loginWindow.SetActive(false);
+            menuWindow.SetActive(true);
+        }
+            
     }
     
+    public void SubmitNameButton()
+    {
+        var request = new UpdateUserTitleDisplayNameRequest
+        {
+            DisplayName = nameInput.text,
+        };
+        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate, OnError);
+    }
+
+    private void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
+    {
+        Debug.Log("Nick actualizado!");
+        menuWindow.SetActive(true);
+    }
+
     void OnError(PlayFabError error)
     {
         Debug.Log("ERROR");
@@ -81,7 +122,7 @@ public class PlayfabManager : MonoBehaviour
             GameObject newGo = Instantiate(rowPrefab, rowsParent);
             Text[] texts = newGo.GetComponentsInChildren<Text>();
             texts[0].text = (item.Position + 1).ToString();
-            texts[1].text = item.PlayFabId;
+            texts[1].text = item.DisplayName;
             texts[2].text = item.StatValue.ToString();
 
             Debug.Log(item.Position + " " + item.PlayFabId + " " + item.StatValue);

@@ -172,7 +172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInput: 0
   playerController: {fileID: 3557424709521232741}
-  m_JumpForce: 5.5
+  m_JumpForce: 6.25
   m_MovementSmoothing: 0
   m_AirControl: 1
   m_WhatIsGround:
@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e700cc6a706a054ebbfe67af287f6c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   hasFallen: 0
   isAttacking: 0
   speed: 10

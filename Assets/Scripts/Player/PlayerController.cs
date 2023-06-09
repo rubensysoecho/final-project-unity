@@ -9,26 +9,29 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody2D rb;
-    public bool hasFallen;
-    public bool isAttacking;
 
+    [Header("Velocidad")]
     public float speed = 5f;
     public float runningSpeed = 1f;
-    public PlayerMovement movement;
 
-    public bool isAlive = true;
-    public GameManager manager;
-
-    public Animator anim;
-    private float airIndex;
-
+    [Header("Salto")]
     public int actualJumps;
     public int maxJumps;
-
     public float jumpHeight;
     public float maxJumpHeight;
     public bool hardFall;
+    private float airIndex;
+
+    [Header("Otros")]
+    public bool hasFallen;
+    public bool isAttacking;
+    public bool isAlive = true;
+
+    [Header("Referencias")]
+    public Rigidbody2D rb;
+    public GameManager manager;
+    public PlayerMovement movement;
+    public Animator anim;
 
     void Start()
     {
@@ -157,6 +160,7 @@ public class PlayerController : MonoBehaviour
                 {
                     manager.Spawn();
                     manager.lives--;
+                    manager.health = manager.maxHealth;
                 }
                 break;
             case "Capybara":

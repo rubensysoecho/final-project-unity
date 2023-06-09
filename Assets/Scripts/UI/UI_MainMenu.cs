@@ -10,6 +10,11 @@ public class UI_MainMenu : MonoBehaviour
         SceneManager.LoadScene("LevelSelection");
     }
 
+    public void IniciarOpciones()
+    {
+        SceneManager.LoadScene("Options");
+    }
+
     public void IniciarEstadisticas()
     {
         SceneManager.LoadScene("Leaderboard");
@@ -17,7 +22,6 @@ public class UI_MainMenu : MonoBehaviour
 
     public void Salir()
     {
-        Debug.Log("CERRAR");
         Application.Quit();
     }
 }

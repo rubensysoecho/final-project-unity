@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Variables del jugador")]
     public int levelPoints = 0;
     public int lives = 3;
     public int health;
     public int maxHealth;
-    public Transform spawnPoint;
-    public PlayerController player;
     public float timeToRespawn = 2f;
-    private float timer = 0;
 
+    [Header("Otros")]
     public bool canWallJump;
     public bool canDash;
 
+    [Header("Referencias")]
+    public PlayerController player;
+    public Transform spawnPoint;
     public UI_GameOver gameOver;
     public UI_LevelFinished levelFinished;
-
     public PlayfabManager bbddManager;
+
+    private float timer = 0;
+    private bool dataSent;
 
     void Start()
     {
@@ -62,12 +66,16 @@ public class GameManager : MonoBehaviour
 
     public void FinishLevel()
     {
-        Time.timeScale = 0;
-        levelFinished.Setup(levelPoints);
-        AddPoints(levelPoints);
-        int totalPoints = PlayerPrefs.GetInt("totalPoints");
-        bbddManager.SendLeaderboard(totalPoints);
-        Debug.Log("LEVEL FINISHED!!");
+        if (!dataSent)
+        {
+            Time.timeScale = 0;
+            levelFinished.Setup(levelPoints);
+            AddPoints(levelPoints);
+            int totalPoints = PlayerPrefs.GetInt("totalPoints");
+            bbddManager.SendLeaderboard(totalPoints);
+            Debug.Log("LEVEL FINISHED!!");
+            dataSent = true;
+        }
     }
 
     private void AddPoints(int pointsToAdd)
