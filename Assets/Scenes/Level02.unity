@@ -2832,6 +2832,10 @@ PrefabInstance:
       propertyPath: pullForce
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3557424709292326056, guid: 99950b83273775746969674f3bc4c4fc, type: 3}
+      propertyPath: defenseTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3557424709292326063, guid: 99950b83273775746969674f3bc4c4fc, type: 3}
       propertyPath: m_SortingOrder
       value: 15

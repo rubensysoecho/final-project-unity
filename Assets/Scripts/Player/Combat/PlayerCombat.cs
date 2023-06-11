@@ -38,7 +38,7 @@ public class PlayerCombat : MonoBehaviour
             Attack03();
         }
 
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKeyDown(KeyCode.V) && movement.m_Grounded)
         {
             Defend();
         }
