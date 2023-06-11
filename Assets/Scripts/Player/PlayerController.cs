@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public bool hasFallen;
     public bool isAttacking;
     public bool isAlive = true;
+    public bool isDefending;
 
     [Header("Referencias")]
     public Rigidbody2D rb;
@@ -106,7 +107,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         // Movimiento lateral, CANWALK ELIMINADO
-        if (isAlive && !hasFallen && !isAttacking)
+        if (isAlive && !hasFallen && !isAttacking && !isDefending)
         {
             if (anim.GetBool("Running"))
             {
@@ -164,7 +165,6 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case "Capybara":
-                Debug.Log("FURRULA");
                 manager.levelPoints += 500;
                 manager.Spawn();
                 Destroy(collision.gameObject, 0);
@@ -192,7 +192,14 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    TakeDamage(enemy.damage);
+                    if (!isDefending)
+                    {
+                        TakeDamage(enemy.damage);
+                    }
+                    else
+                    {
+                        Empujar();
+                    }
                 }
                 break;
             case "Eagle":
@@ -204,7 +211,14 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    TakeDamage(enemyEagle.damage);
+                    if (!isDefending)
+                    {
+                        TakeDamage(enemyEagle.damage);
+                    }
+                    else
+                    {
+                        Empujar();
+                    }
                 }
                 break;
         }
@@ -244,8 +258,21 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        anim.SetTrigger("Hit");
         manager.health -= damage;
-        Debug.Log("Te han tocado con " + damage);
+        Empujar();
+    }
+
+    private void Empujar()
+    {
+        if (movement.m_FacingRight)
+        {
+            rb.velocity = new Vector2(-10, 5);
+        }
+        else
+        {
+            rb.velocity = new Vector2(10, 5);
+        }
     }
 
     private bool AnimationPlaying(string animationName)

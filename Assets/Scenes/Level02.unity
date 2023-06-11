@@ -1260,7 +1260,7 @@ PrefabInstance:
       objectReference: {fileID: 789748455}
     - target: {fileID: 4062449546459839653, guid: 76b485e37a30a7e40a467b3234937cb4, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4062449546459839653, guid: 76b485e37a30a7e40a467b3234937cb4, type: 3}
       propertyPath: m_LocalScale.x
@@ -1953,13 +1953,29 @@ PrefabInstance:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222409, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_Name
       value: Walker (2)
       objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222419, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222419, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_LocalScale.x
@@ -2812,6 +2828,10 @@ PrefabInstance:
       propertyPath: manager
       value: 
       objectReference: {fileID: 2082003653}
+    - target: {fileID: 3557424709292326056, guid: 99950b83273775746969674f3bc4c4fc, type: 3}
+      propertyPath: pullForce
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3557424709292326063, guid: 99950b83273775746969674f3bc4c4fc, type: 3}
       propertyPath: m_SortingOrder
       value: 15
@@ -3400,7 +3420,7 @@ PrefabInstance:
     - target: {fileID: 3781126803166058067, guid: 837d2998940aa1941a445a6729af07c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 990817132}
+      objectReference: {fileID: 0}
     - target: {fileID: 3781126803166058067, guid: 837d2998940aa1941a445a6729af07c6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReturnToMenu
@@ -3505,32 +3525,9 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 837d2998940aa1941a445a6729af07c6, type: 3}
 --- !u!224 &990817129 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3781126803245464427, guid: 837d2998940aa1941a445a6729af07c6, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1616056962344856563, guid: 837d2998940aa1941a445a6729af07c6, type: 3}
   m_PrefabInstance: {fileID: 990817128}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &990817130 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3781126803245464426, guid: 837d2998940aa1941a445a6729af07c6, type: 3}
-  m_PrefabInstance: {fileID: 990817128}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &990817131 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3781126803166058065, guid: 837d2998940aa1941a445a6729af07c6, type: 3}
-  m_PrefabInstance: {fileID: 990817128}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &990817132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990817131}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb9b53d414a4e2144921ff6183d4de6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pointsText: {fileID: 1733564937}
 --- !u!1 &1083005356
 GameObject:
   m_ObjectHideFlags: 0
@@ -4606,17 +4603,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4006018271203631295, guid: e70bda659951b2145aaa377991047efb, type: 3}
   m_PrefabInstance: {fileID: 1733564935}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1733564937 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4006018270961700735, guid: e70bda659951b2145aaa377991047efb, type: 3}
-  m_PrefabInstance: {fileID: 1733564935}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1733564938 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4006018271203631292, guid: e70bda659951b2145aaa377991047efb, type: 3}
@@ -4733,13 +4719,25 @@ PrefabInstance:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222409, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_Name
       value: Walker (1)
       objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222419, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222419, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_LocalScale.x
@@ -4807,6 +4805,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1925405484}
     m_Modifications:
+    - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: m_GravityScale
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222409, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_Name
       value: Walker
@@ -5352,9 +5366,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 722252629}
-  - {fileID: 2109368075}
   - {fileID: 1789233564}
   - {fileID: 675971657}
+  - {fileID: 2109368075}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5820,7 +5834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac40ebe8bbc6ae140b9a5af8c73f1d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 990817130}
+  pauseMenu: {fileID: 0}
   isPaused: 0
 --- !u!1 &2132124595
 GameObject:

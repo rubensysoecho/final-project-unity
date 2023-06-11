@@ -12,14 +12,9 @@ public class MainEnemyController : MonoBehaviour
     [Header("Referencias")]
     public ParticleSystem executionParticle;
 
-    void Start()
+    public void ReceiveDamage(int damage)
     {
-        
-    }
-
-    void Update()
-    {
-        
+        health -= damage;
     }
 
     public void Die()

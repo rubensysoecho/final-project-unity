@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,9 @@ public class PlayerCombat : MonoBehaviour
     public float attackRange = 0.5f;
     private int damage;
     public LayerMask enemyLayers;
+    public int pullForce;
+    public float defenseTime;
+    public float defendingTime;
 
     [Header("Referencias")]
     public ParticleSystem attackParticle;
@@ -29,9 +33,26 @@ public class PlayerCombat : MonoBehaviour
             Attack02();
         }
         
-        if ( Input.GetKeyDown(KeyCode.C) && !controller.isAttacking && movement.m_Grounded)
+        if (Input.GetKeyDown(KeyCode.C) && !controller.isAttacking && movement.m_Grounded)
         {
             Attack03();
+        }
+
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Defend();
+        }
+
+        if (controller.isDefending)
+        {
+            defendingTime += Time.deltaTime;
+            if (defendingTime >= defenseTime)
+            {
+                defendingTime = 0;
+                controller.isDefending = false;
+                anim.SetBool("isDefending", false);
+                GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            }
         }
     }
 
@@ -53,12 +74,12 @@ public class PlayerCombat : MonoBehaviour
             }
             else
             {
+                Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
                 attackParticle.Play();
-                enemy.GetComponent<MainEnemyController>().health -= damage;
+                enemy.GetComponent<MainEnemyController>().ReceiveDamage(damage);
+                Empujar(enemyRb);
                 Debug.Log(enemy.GetComponent<MainEnemyController>().health + " HP");
             }
-
-            
         }
     }
 
@@ -80,9 +101,10 @@ public class PlayerCombat : MonoBehaviour
             }
             else
             {
+                Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
                 attackParticle.Play();
-                enemy.GetComponent<MainEnemyController>().health -= damage;
-                Debug.Log(enemy.GetComponent<MainEnemyController>().health);
+                enemy.GetComponent<MainEnemyController>().ReceiveDamage(damage);
+                Empujar(enemyRb);
             }
         }
     }
@@ -105,10 +127,30 @@ public class PlayerCombat : MonoBehaviour
             }
             else
             {
+                Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
                 attackParticle.Play();
-                enemy.GetComponent<MainEnemyController>().health -= damage;
-                Debug.Log(enemy.GetComponent<MainEnemyController>().health);
+                enemy.GetComponent<MainEnemyController>().ReceiveDamage(damage);
+                Empujar(enemyRb);
             }
+        }
+    }
+
+    private void Defend()
+    {
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        controller.isDefending = true;
+        anim.SetBool("isDefending", true);
+    }
+
+    private void Empujar(Rigidbody2D enemyRb)
+    {
+        if (movement.m_FacingRight)
+        {
+            enemyRb.velocity = new Vector2(pullForce, 3);
+        }
+        else
+        {
+            enemyRb.velocity = new Vector2(-pullForce, 3);
         }
     }
 

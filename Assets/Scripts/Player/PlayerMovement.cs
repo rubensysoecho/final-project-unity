@@ -76,7 +76,8 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     public void Jump() {
-        rb.velocity = Vector2.up * m_JumpForce;
+        //rb.velocity = Vector2.up * m_JumpForce;
+        rb.velocity = new Vector2(rb.velocity.x, m_JumpForce);
     }
 
     private bool isWalled()

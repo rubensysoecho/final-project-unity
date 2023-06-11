@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     {
         Spawn();
         health = maxHealth;
+        Time.timeScale = 1f;
     }
 
     void Update()

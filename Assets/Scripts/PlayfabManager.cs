@@ -68,6 +68,7 @@ public class PlayfabManager : MonoBehaviour
     private void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
     {
         Debug.Log("Nick actualizado!");
+        loginWindow.SetActive(false);
         menuWindow.SetActive(true);
     }
 
@@ -104,7 +105,7 @@ public class PlayfabManager : MonoBehaviour
         {
             StatisticName = "Puntos",
             StartPosition = 0,
-            MaxResultsCount = 10
+            MaxResultsCount = 5
         };
         PlayFabClientAPI.GetLeaderboard(request, OnLeaderboardGet, OnError);
     }

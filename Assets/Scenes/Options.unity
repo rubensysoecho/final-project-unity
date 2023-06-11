@@ -3456,7 +3456,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Bajo
+  m_Text: Alto
 --- !u!222 &1099126217
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4227,11 +4227,11 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Bajo
+    - m_Text: Alto
       m_Image: {fileID: 0}
     - m_Text: Medio
       m_Image: {fileID: 0}
-    - m_Text: Alto
+    - m_Text: Bajo
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4655,7 +4655,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 924221409}
+        m_TargetAssemblyTypeName: UI_SettingsMenu, Assembly-CSharp
+        m_MethodName: SetFullscreen
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1743262394
 GameObject:
@@ -5456,7 +5468,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1716126072, guid: a8856130e178dfa4e896bd54b5ba1809, type: 3}
       propertyPath: m_Options.m_Options.Array.data[0].m_Text
-      value: Bajo
+      value: Alto
       objectReference: {fileID: 0}
     - target: {fileID: 1716126072, guid: a8856130e178dfa4e896bd54b5ba1809, type: 3}
       propertyPath: m_Options.m_Options.Array.data[1].m_Text
@@ -5464,7 +5476,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1716126072, guid: a8856130e178dfa4e896bd54b5ba1809, type: 3}
       propertyPath: m_Options.m_Options.Array.data[2].m_Text
-      value: Alto
+      value: Bajo
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822579476, guid: a8856130e178dfa4e896bd54b5ba1809, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822579476, guid: a8856130e178dfa4e896bd54b5ba1809, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822579476, guid: a8856130e178dfa4e896bd54b5ba1809, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetFullscreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822579476, guid: a8856130e178dfa4e896bd54b5ba1809, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UI_SettingsMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1822579476, guid: a8856130e178dfa4e896bd54b5ba1809, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3373146593157955209, guid: a8856130e178dfa4e896bd54b5ba1809, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
