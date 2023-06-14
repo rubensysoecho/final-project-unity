@@ -5,14 +5,4 @@ using UnityEngine;
 public class EagleController : MainEnemyController
 {
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
 }
