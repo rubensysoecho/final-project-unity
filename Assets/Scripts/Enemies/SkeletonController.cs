@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class SkeletonController : MonoBehaviour
 {
-    public float health;
     public float speed;
     public float distance;
-    public float damage;
-    public float reward;
     private float positionLeft;
     private float positionRight;
     public bool isMovingRight;

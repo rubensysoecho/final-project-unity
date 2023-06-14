@@ -16,7 +16,11 @@ public class UI_GameOver : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("Level01");
+        Scene actualScene = SceneManager.GetActiveScene();
+        if (actualScene.name.Equals("Level01"))
+            SceneManager.LoadScene("Level01");
+        else if (actualScene.name.Equals("Level02"))
+            SceneManager.LoadScene("Level02");
     }
 
     public void ExitButton()

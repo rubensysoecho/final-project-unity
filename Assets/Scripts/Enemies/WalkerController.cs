@@ -21,8 +21,8 @@ public class WalkerController : MainEnemyController
     {
         spriteR = gameObject.GetComponent<SpriteRenderer>();
         isMovingRight = false;
-        positionLeft = gameObject.transform.position.x - distance;
-        positionRight = gameObject.transform.position.x + distance;
+        positionLeft = transform.position.x - distance;
+        positionRight = transform.position.x + distance;
     }
 
     void Update()

@@ -1701,6 +1701,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1925405484}
     m_Modifications:
+    - target: {fileID: -8453726868205686921, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: reward
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_Mass
       value: 1000
@@ -2906,6 +2910,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1925405484}
     m_Modifications:
+    - target: {fileID: -8453726868205686921, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: reward
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_Mass
       value: 1000
@@ -9318,6 +9326,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1925405484}
     m_Modifications:
+    - target: {fileID: -8453726868205686921, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: reward
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_Mass
       value: 1000
@@ -11892,6 +11904,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1925405484}
     m_Modifications:
+    - target: {fileID: -8453726868205686921, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: speed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8453726868205686921, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: reward
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: -8453726868205686921, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: distance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_Mass
       value: 1000
@@ -14993,11 +15017,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1871648127209807034, guid: de54c2e1c216d9a48bb945f9e6f68de1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 207.9
+      value: 207.90002
       objectReference: {fileID: 0}
     - target: {fileID: 1871648127209807034, guid: de54c2e1c216d9a48bb945f9e6f68de1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30.9
+      value: -30.900024
       objectReference: {fileID: 0}
     - target: {fileID: 1871648127636434832, guid: de54c2e1c216d9a48bb945f9e6f68de1, type: 3}
       propertyPath: m_FontData.m_Font

@@ -203,7 +203,6 @@ public class PlayerController : MonoBehaviour
                 }
                 break;
             case "Eagle":
-                Debug.Log("IMPACTO " + collision.gameObject.tag);
                 EagleController enemyEagle = collision.gameObject.GetComponent<EagleController>();
                 if (manager.health - enemyEagle.damage <= 0)
                 {

@@ -1,5 +1,6 @@
 using PlayFab;
 using PlayFab.ClientModels;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,9 +50,17 @@ public class PlayfabManager : MonoBehaviour
         }
         else
         {
-            loggingWindow.SetActive(false);
-            loginWindow.SetActive(false);
-            menuWindow.SetActive(true);
+            try
+            {
+                loggingWindow.SetActive(false);
+                loginWindow.SetActive(false);
+                menuWindow.SetActive(true);
+            }
+            catch (Exception e)
+            {
+
+            }
+            
         }
             
     }

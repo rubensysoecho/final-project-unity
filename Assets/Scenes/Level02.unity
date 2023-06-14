@@ -1953,6 +1953,10 @@ PrefabInstance:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -8453726868205686921, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: reward
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_Mass
       value: 1000
@@ -3532,6 +3536,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1616056962344856563, guid: 837d2998940aa1941a445a6729af07c6, type: 3}
   m_PrefabInstance: {fileID: 990817128}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &990817130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1616056962344856562, guid: 837d2998940aa1941a445a6729af07c6, type: 3}
+  m_PrefabInstance: {fileID: 990817128}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1083005356
 GameObject:
   m_ObjectHideFlags: 0
@@ -4723,6 +4732,10 @@ PrefabInstance:
       propertyPath: speed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: -8453726868205686921, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: reward
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_Mass
       value: 1000
@@ -4809,6 +4822,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1925405484}
     m_Modifications:
+    - target: {fileID: -8453726868205686921, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
+      propertyPath: reward
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4085739915082222408, guid: 0ede57310f87e904387af5a2f3ec5867, type: 3}
       propertyPath: m_Mass
       value: 1000
@@ -5838,7 +5855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac40ebe8bbc6ae140b9a5af8c73f1d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 0}
+  pauseMenu: {fileID: 990817130}
   isPaused: 0
 --- !u!1 &2132124595
 GameObject:
