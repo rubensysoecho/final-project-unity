@@ -441,6 +441,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rowPrefab: {fileID: 5750024232663443181, guid: 9443a59fc33ba6340b0a63dd35a39c3f, type: 3}
   rowsParent: {fileID: 1213450709}
+  loggingWindow: {fileID: 0}
+  loginWindow: {fileID: 0}
+  menuWindow: {fileID: 0}
+  nameInput: {fileID: 0}
 --- !u!1 &358596085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1988,7 +1992,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: score
+  m_Text: puntos
 --- !u!222 &711326027
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2288,6 +2292,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rowPrefab: {fileID: 0}
   rowsParent: {fileID: 0}
+  loggingWindow: {fileID: 0}
+  loginWindow: {fileID: 0}
+  menuWindow: {fileID: 0}
+  nameInput: {fileID: 0}
 --- !u!1 &1313438402
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,7 +2447,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: name
+  m_Text: usuario
 --- !u!222 &1539070092
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2519,7 +2527,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PLACE
+  m_Text: puesto
 --- !u!222 &1861229054
 CanvasRenderer:
   m_ObjectHideFlags: 0

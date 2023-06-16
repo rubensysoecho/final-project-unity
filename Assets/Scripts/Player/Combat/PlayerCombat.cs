@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -77,8 +78,14 @@ public class PlayerCombat : MonoBehaviour
                 Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
                 attackParticle.Play();
                 enemy.GetComponent<MainEnemyController>().ReceiveDamage(damage);
-                Empujar(enemyRb);
-                Debug.Log(enemy.GetComponent<MainEnemyController>().health + " HP");
+                try
+                {
+                    Empujar(enemyRb);
+                }
+                catch (Exception e)
+                {
+
+                }
             }
         }
     }
@@ -104,7 +111,14 @@ public class PlayerCombat : MonoBehaviour
                 Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
                 attackParticle.Play();
                 enemy.GetComponent<MainEnemyController>().ReceiveDamage(damage);
-                Empujar(enemyRb);
+                try
+                {
+                    Empujar(enemyRb);
+                }
+                catch (Exception e)
+                {
+
+                }
             }
         }
     }
@@ -130,7 +144,13 @@ public class PlayerCombat : MonoBehaviour
                 Rigidbody2D enemyRb = enemy.GetComponent<Rigidbody2D>();
                 attackParticle.Play();
                 enemy.GetComponent<MainEnemyController>().ReceiveDamage(damage);
-                Empujar(enemyRb);
+                try
+                {
+                    Empujar(enemyRb);
+                }catch(Exception e)
+                {
+
+                }
             }
         }
     }
